@@ -52,7 +52,7 @@ app.get('/esImpar', (req, res) => {
     }
 });
 
-/*5- Una ruta lista de compras (ruta con query) que devuelva un objeto con 5 productos, se debe usar res.json({obejto})*/
+/*5- Una ruta lista de compras (ruta con query) que devuelva un objeto con 5 productos, se debe usar res.json({objeto})*/
 
 app.get('/listaDeCompras', (req, res) => {
     res.json(req.query);
