@@ -4,8 +4,8 @@ const port = 3000;
 
 /* 1- Una ruta que reciba nombre y apellido por medio de params (ruta parametrizada) y devuelva por un res.send un query string armando un saludo */
 
-app.get('/person/:firstName/:lastName', (req, res) => {
-    res.send(`${req.params.firstName} ${req.params.lastName}, ${req.query.saludo}`);
+app.get('/person/:first_name/:last_name', (req, res) => {
+    res.send(`${req.params.first_name} ${req.params.last_name}, ${req.query.saludo}`);
 });
 
 /* 2- Crear una ruta dividir la cual reciba dos parametros (ruta parametrisada) divisor y dividendo, la misma tiene que devolver un res.json({error: "no se puede dividir por cero"}) si el usuario ingresa un 0, si no es el caso devolver res.json({resultado}) */
@@ -44,7 +44,7 @@ app.get('/sumar/:valor1/:valor2', (req, res) => {
 
 /*4- Crear una ruta que reciba un numero (ruta con query) si el numero es impar debe devolver un res.send("no autorizado") , y si el numero es par debe devolver res.send("autorizado") */
 
-app.get('/esImpar', (req, res) => {
+app.get('/es_impar', (req, res) => {
     if(req.query.numero % 2 === 0) {
         res.send('Autorizado')
     } else {
@@ -54,7 +54,7 @@ app.get('/esImpar', (req, res) => {
 
 /*5- Una ruta lista de compras (ruta con query) que devuelva un objeto con 5 productos, se debe usar res.json({objeto})*/
 
-app.get('/listaDeCompras', (req, res) => {
+app.get('/lista_compras', (req, res) => {
     res.json(req.query);
 });
 
